@@ -30,7 +30,7 @@ Project structure
 ```
 
 ### Screenshot
-![Site](https://github.com/CyberRoute/monitor-websites/blob/main/screenshot/site.png)
+![Site](https://github.com/CyberRoute/monitor-websites/blob/master/screenshot/site.png)
 
 ### Quick Start
 
