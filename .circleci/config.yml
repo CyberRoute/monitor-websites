@@ -24,17 +24,11 @@ jobs:
     # Change the version below to your required version of python
     docker:
       - image: cimg/python:3.8
-        environment:
-            TEST_DATABASE_URL: postgresql://root@localhost/circle_test
-            POSTGRES_USER: postgres
-            POSTGRES_PASSWORD: password
-
-      # Checkout the code as the first step. This is a dedicated CircleCI step.
+    # Checkout the code as the first step. This is a dedicated CircleCI step.
     # The python orb's install-packages step will install the dependencies from a Pipfile via Pipenv by default.
     # Here we're making sure we use just use the system-wide pip. By default it uses the project root's requirements.txt.
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
-      - image: circleci/postgres:9.6.5-alpine-ram
     steps:
       - checkout
       - python/install-packages:
@@ -44,13 +38,4 @@ jobs:
       - run:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
-          command: tox
-
-      - run: sudo apt-get update
-      - run: sudo apt-get install postgresql-client
-      - run: |
-         psql \
-         -d $TEST_DATABASE_URL \
-         -c "CREATE TABLE monstats  (id SERIAL PRIMARY KEY, site_url VARCHAR NOT NULL, http_status VARCHAR, response_time_ms VARCHAR, time TIMESTAMP);"
-
-
+          command: pytest
