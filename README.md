@@ -1,5 +1,5 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![CircleCI](https://circleci.com/gh/CyberRoute/monitor-websites.svg?style=svg)](https://circleci.com/gh/CyberRoute/monitor-websites)
+[![CircleCI](https://circleci.com/gh/CyberRoute/monitor-websites.svg?style=shield)](https://circleci.com/gh/CyberRoute/monitor-websites)
 
 # A Flask App that monitors websites
 
