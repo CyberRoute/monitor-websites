@@ -1,0 +1,22 @@
+
+<div id="update">
+
+{% for group, urls in checkurls.items() %}
+ 
+    <h1 class="group">{{ group }}</h1>
+    {% for url in urls %}
+        {% if returned_statuses.get(url)[0] == 200 %}
+            <p class="good-url">{{ url }} <font class="good-color"> {{ returned_statuses.get(url) }} </font></p>
+        {% endif %}
+    {% endfor %}
+    
+    {% for url in urls %}
+        {% if returned_statuses.get(url)[0] == 200 %}
+        {% else %}
+            <p class="bad-url">{{ url }} <font class="bad-color"> {{ returned_statuses.get(url) }} </font></p>
+        {% endif %}
+    {% endfor %}
+    
+{% endfor %}
+
+</div>
