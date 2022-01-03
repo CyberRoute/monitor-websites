@@ -12,7 +12,6 @@ m = Monitor()
 app = Flask(__name__)
 scheduler = APScheduler()
 app.config.from_object('config.config.DevelopmentConfig')
-
 api = Api(app)
 
 
